@@ -1,0 +1,22 @@
+﻿---------------------------------
+Prebuild process:
+---------------------------------
+
+File: BuildCopyWWW.vbs
+this process copys the complete folder www from external www project into bin/debug or bin/release directory
+
+---------------------------------
+Postbuild process:
+---------------------------------
+
+File: PostBuild.bat
+Requirements: 7zip.exe (Zipping tool) must be in users home directory
+this process copys the complete folder www from bin/debug or bin/release into the xap archive
+
+
+---------------------------------
+Debugging
+---------------------------------
+
+First deploy app to the phone, start it once and close.
+The you can normally debug through visual studio express.

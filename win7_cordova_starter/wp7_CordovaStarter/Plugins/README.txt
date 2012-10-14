@@ -1,0 +1,1 @@
+Plugins JS files must be located within external www project under www/www/plugins

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+		<link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+	</head>
+	<body>
+	<div data-role="page" id="index">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a id="label_location" class="brand" href="#"><i class="icon-map-marker icon-white"></i><span id="label_location_text">?</span></a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a id="lnk_start" href="index.html#start">Start</a></li>
+              <li><a id="lnk_location_change" href="location.html" data-transition="slide" rel="external">Standort wechseln</a></li>
+              <li><a id="lnk_location_reload" href="#reload">Standort neu laden</a></li>
+              <li><a href="#about">Information</a></li>
+              <li><a href="#contact">Kontakt</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    <!--/navbar -->
+
+		<div class="container">
+		<div class="hero-unit">
+...
+        </div>
+		</div>
+        </div>
+		<script type="text/javascript" src="cordova-xloader.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.mobile.js"></script>
+		<script type="text/javascript" src="js/jm.cfg.js"></script>
+		<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+		<script type="text/javascript" src="plugins/AsyncCD.js"></script>
+		<script type="text/javascript" src="js/reverse_location.js"></script>        
+        <script type="text/javascript" src="pagejs/index.js"></script>        
+	</body>
+</html>

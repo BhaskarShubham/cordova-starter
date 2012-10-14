@@ -1,0 +1,67 @@
+Guide on how to get Cordova project working after reading the 'Getting started' tutorial:
+
+
+-------------------------------------------------
+Allowed URLs:
+-------------------------------------------------
+
+Configure all URLs that should open in WebView by editing file
+/res/xml/cordova.xml 
+by adding tag <access>
+e.g.:
+<access origin="https://www.meldebehoerde.de"/>
+or for all local pages
+<acces origin="http://127.0.0.1*"/>
+or for all URLs
+<access origin="*"/>
+
+
+-------------------------------------------------
+Proguard obfuscator configuration:
+-------------------------------------------------
+
+Add this to the proguard.cfg file:
+
+#cordova
+-keep public class * extends com.phonegap.api.Plugin 
+-keep public class org.apache.cordova.DroidGap 
+-keep public class org.apache.cordova.** 
+#proguard does not accept environment variables in paths
+-libraryjars <path-to-android-sdk>/tools/lib/commons-codec-1.4.jar
+-dontwarn android.webkit.*
+
+Create ant.properties file if it does not allready exit and put this entries in to enable proguard on build time
+proguard.enabled=true
+proguard.config=proguard.cfg
+
+
+-------------------------------------------------
+Use external WWW folder:
+-------------------------------------------------
+
+Let Android create an ant build file for you : $android update project -p
+Copy target -package-resources from <path-to-android-sdk>/tools/ant/build.xml
+into the project build.xml right above the import of the sdk/build.xml.
+Now change the attribute value of 'assets' to the path of the folder where the content is.
+All files and folders found under the new path will be put into folder assets of your app when the apk is get built.
+
+
+-------------------------------------------------
+Automated build
+-------------------------------------------------
+
+Create ant.properties file if it does not allready exit and put this entries in.
+So you can build the app fully automated otherwise you will get prompted for keystore details when running ant build file.
+sdk.dir=path to android sdk
+key.store=path to your keystore file
+key.alias=your keystore alias
+key.alias.password=your keystore alias password
+key.store.password=your keystore password
+
+-------------------------------------------------
+Needed Librarys
+-------------------------------------------------
+You have to put min. the following libs into the 'libs' folder
+- android-support-v4.jar
+- cordova-2.0.0.jar
+

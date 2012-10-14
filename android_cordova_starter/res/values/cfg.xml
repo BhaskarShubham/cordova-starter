@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">android_cordova_starter</string>
+    <string name="menu_url"><![CDATA[https://github.com]]></string>
+	<string name="startpage_url"><![CDATA[file:///android_asset/www/index.html]]></string>
+</resources>

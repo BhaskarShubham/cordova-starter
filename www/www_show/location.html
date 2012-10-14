@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Cordova WP7</title>
+    <link rel="stylesheet" href="./show/master.css" type="text/css" media="screen" title="no title"
+        charset="utf-8" />
+    <script type="text/javascript" charset="utf-8" src="cordova-xloader.js"></script>
+    <script type="text/javascript">
+        // Wait for Cordova to load      
+        document.addEventListener("deviceready", onDeviceReady, false);
+        var watchID = null;
+        // Cordova is ready
+        function onDeviceReady() {
+            // Get the most accurate position updates available on the
+            // device.
+            var options = { enableHighAccuracy: true };
+            watchID = navigator.geolocation.watchPosition(onSuccess, onError, options);
+        }
+        // onSuccess Geolocation       
+        function onSuccess(position) {
+            var element = document.getElementById('geolocation');
+            element.innerHTML = 'Latitude: ' + position.coords.latitude + '<br />' +
+                            'Longitude: ' + position.coords.longitude + '<br />' +
+                            '<hr />' + element.innerHTML;
+        }
+        // clear the watch that was started earlier      
+        function clearWatch() {
+            if (watchID != null) {
+                navigator.geolocation.clearWatch(watchID);
+                watchID = null;
+            }
+        }
+        // onError Callback receives a PositionError object    
+        function onError(error) {
+            alert('code: ' + error.code + '\n' +
+            'message: ' + error.message + '\n');
+        }
+    </script>
+  </head>
+  <body>
+    <button onclick="clearWatch();">Clear Watch</button>
+    <br/>
+    <button onclick="window.location.href='./index.html';return false;">Back</button>
+    <br/>
+    <p id="geolocation">Watching geolocation...</p>
+    <br/>
+  </body>
+</html>

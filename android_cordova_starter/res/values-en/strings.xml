@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="app_menu">
+	    <item>Start</item>
+	    <item>Reload</item>
+	    <item>Stop</item>
+	    <item>Menu</item>
+	    <item>Quit</item>
+	</string-array>
+</resources>
